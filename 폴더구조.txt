@@ -2,10 +2,16 @@ project dir
 	working directory(작업물이 있는 장소)
 	-stage area:이번 버전에 커밋할 작업물(들)을 올려놓는 공간
 	repository(저장소,.git folder)
-	:커밋한 버전들을 기록한 공간. 이전 버전에서 파생된 버전들은 직전 버전의 커밋ID를 기록하여 가진다(복원의 용이성)
+	:커밋한 버전들을 기록한 공간. 이전 버전에서 파생된 버전들은 직전 버전의 커밋ID를(정확히는 Head가 가리키는 커밋ID) 기록하여 가진다(복원의 용이성)
 
 (Head 는 master를 가리키고) master는 마지막으로 커밋된 버전을 가리킨다
 
 Head는 현재 나의 working copy가 어느 버전에서 왔는지 가리킨다
 
 이전버전으로 돌아가는 명령어 - 체크아웃
+
+
+c1(Head) - c2 - c3(master)
+
+
+
