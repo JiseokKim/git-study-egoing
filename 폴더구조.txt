@@ -6,14 +6,18 @@ project dir
 
 (Head 는 master를 가리키고) master는 마지막으로 커밋된 버전을 가리킨다(정확한 정의는 아님)
 
-Head는 현재 나의 working copy가 어느 버전에서 왔는지 가리킨다
+Head는 현재 나의 working copy(작업물 버전)가 어느 버전을 왔는지 가리킨다
 
 이전버전으로 돌아가는 명령어 - 체크아웃 -> Head를 옮긴다
 버전을 삭제하는 명령어 - reset-> master를 옮긴다
+커밋 아이디를 알면 리셋하더라도 다시 복원가능하다
+커밋 아이디를 모르더라도 reflog에서 찾을 수 있다
+터미널에서 git reflog 명령어를 치면 git에서 한 작업기록을 확인 할 수 있다
+reflog에서 가장 왼쪽이 결과물(커밋ID), HEAD@{숫자}:가 원인(작업)이다
 
 check out for master
 
 1.c1 - c2 - c3(master,Head)
 
-2.c1(detachhed Head) - c2 - c3(master)
+2.c1(dettached Head) - c2 - c3(master)
 
