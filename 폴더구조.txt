@@ -3,13 +3,16 @@ project dir
 	-stage area:이번 버전에 커밋할 작업물(들)을 올려놓는 공간
 	repository(저장소,.git folder)
 	:커밋한 버전들을 기록한 공간. 이전 버전에서 파생된 버전들은 직전 버전의 커밋ID를(정확히는 Head가 가리키는 커밋ID) 기록하여 가진다(복원의 용이성)
+커밋은 head가 가리키는 것의 스냅샷을 기록한다
 
 (Head 는 master를 가리키고) master는 마지막으로 커밋된 버전을 가리킨다(정확한 정의는 아님)
 
 Head는 현재 나의 working copy(작업물 버전)가 어느 버전을 왔는지 가리킨다
 
-이전버전으로 돌아가는 명령어 - 체크아웃 -> Head를 옮긴다
-버전을 삭제하는 명령어 - reset-> master를 옮긴다
+다른버전으로 이동하는 명령어 - 체크아웃(checkout) -> Head를 옮긴다->Head는 현재 작업물을 가리킨다->프로젝트 내용이 이동한 버전으로 덮어씌워진다
+
+버전을 삭제하는 명령어 - reset-> (Head가 가리키는)branch를 옮긴다. 또는 Head가 brach를 가리키지 않고 버전을 직접 가리킨다면 check out과 같은 효과를 가진다
+
 커밋 아이디를 알면 리셋하더라도 다시 복원가능하다
 커밋 아이디를 모르더라도 reflog에서 찾을 수 있다
 터미널에서 git reflog 명령어를 치면 git에서 한 작업기록을 확인 할 수 있다
@@ -21,3 +24,16 @@ check out for master
 
 2.c1(dettached Head) - c2 - c3(master)
 
+커밋은 커밋한 시점에 head가 가리키는 것을 parent에 기록한다
+
+branch:master도 브랜치다(default branch)
+
+merge(병합):
+B branch 특정 버전 b4를 A branch a4로 병합할려면 먼저 Head를 A branch로 체크아웃하고 a4와 b5를 병합하여 만들어진 a5를 A branch가 가리킨다 
+
+fast forward
+conflict:병합할 때 양쪽 같은 파일의 같은 위치에 수정되는 부분이 존재할 때 충돌나는 현상, 해결방법은 그냥 수동으로 충돌나는 부분만 수정하여 커밋하면 된다
+
+git은 3-way merge 방식을 채택: a4와 b4를 병합할 때 두 브랜치의 공통 버전을 base로 하여 a4와 b4 base의 파일들을 모두 비교하여 최대한 자동으로 병합한다
+
+충돌이 났을 경우 base를 기준으로 하여 문제를 찾으면 비교적 빠르게 찾을 수 있다
