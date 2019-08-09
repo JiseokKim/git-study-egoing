@@ -8,4 +8,4 @@ return;
 5
 8
 right, left5
-ritht6
+ritht, letf6
