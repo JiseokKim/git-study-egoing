@@ -37,3 +37,28 @@ conflict:병합할 때 양쪽 같은 파일의 같은 위치에 수정되는 부
 git은 3-way merge 방식을 채택: a4와 b4를 병합할 때 두 브랜치의 공통 버전을 base로 하여 a4와 b4 base의 파일들을 모두 비교하여 최대한 자동으로 병합한다
 
 충돌이 났을 경우 base를 기준으로 하여 문제를 찾으면 비교적 빠르게 찾을 수 있다
+
+
+***reset은 로컬 저장소에서만 사용하고 원격저장소(모두가 공유하는 곳)에서 사용하지 말라.  
+만약 원격저장소에서 올린 버전에 실수가 있다면 reset이 아닌 revert를 사용해야 한다. revert에서도 3way-merge 방식이 사용된다
+
+Enter same passphrase again:
+Your identification has been saved in /c/Users/김지석/.ssh/id_rsa.
+Your public key has been saved in /c/Users/김지석/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:hO7xLNuqxiREqwXA+/rpPCOSy42Y5J3FLGe458df9mk dnfl42clsrn4@hanmail.net
+The key's randomart image is:
+sshkeyWkd!2
+
+로컬(Local)에서 원격(remote)으로 파일을 올리는 것을 PUSH. 다운로드를 PULL
+Git Hosting(원격저장소를 제공하는 git 서비스)에 github.com가 있다
+
+원격저장소 통신방법은 2가지-HTTPS, SSH 통신 방법으로 나눈다
+-원격저장소를 뚫는 방법
+ssh key가 없다면 key를 새로 만들고
+ssh 퍼블릭 key를 github에 등록한다
+sourcetree 프로그램에서 옵션 -> ssh key -> open ssh 방식으로 수정. id_rsa 파일을 적용한다
+
+원격저장소는 pull는 마음대로 가능하지만 push는 프로젝트에 인가된 사람이 아니면 push 할 수 없다
+
+github와 비슷한 gitlab이라는 서비스도 있는데 github와 달리 private 저장소도 무료다
