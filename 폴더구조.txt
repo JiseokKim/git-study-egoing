@@ -62,3 +62,5 @@ sourcetree 프로그램에서 옵션 -> ssh key -> open ssh 방식으로 수정.
 원격저장소는 pull는 마음대로 가능하지만 push는 프로젝트에 인가된 사람이 아니면 push 할 수 없다
 
 github와 비슷한 gitlab이라는 서비스도 있는데 github와 달리 private 저장소도 무료다
+
+Local branch와 Remote branch의 이름을 서로 다르게 쓸수는 있다(권장하지는 않음)
